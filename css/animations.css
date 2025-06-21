@@ -1,0 +1,358 @@
+/* Animation for the transition between all the pages */
+
+/* Fade Animation */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Slide Animation */
+.slide-enter {
+    transform: translateX(100%);
+}
+
+.slide-enter-active {
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+
+.slide-exit {
+    transform: translateX(0);
+}
+
+.slide-exit-active {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+/* Rise Animation */
+.rise-enter {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.rise-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.rise-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rise-exit-active {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Rotate Animation */
+.rotate-enter {
+    transform: rotateY(90deg);
+    transform-origin: left center;
+    opacity: 0;
+}
+
+.rotate-enter-active {
+    transform: rotateY(0);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.rotate-exit {
+    transform: rotateY(0);
+    transform-origin: right center;
+    opacity: 1;
+}
+
+.rotate-exit-active {
+    transform: rotateY(-90deg);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Pop Animation */
+.pop-enter {
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.pop-enter-active {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.pop-exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.pop-exit-active {
+    transform: scale(1.5);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Skate Animation */
+.skate-enter {
+    transform: translateX(100%) rotate(10deg);
+    opacity: 0;
+}
+
+.skate-enter-active {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.skate-exit {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+}
+
+.skate-exit-active {
+    transform: translateX(-100%) rotate(-10deg);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Wipe Animation */
+.wipe-enter {
+    clip-path: inset(0 100% 0 0);
+}
+
+.wipe-enter-active {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.5s ease;
+}
+
+.wipe-exit {
+    clip-path: inset(0 0 0 0);
+}
+
+.wipe-exit-active {
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.5s ease;
+}
+
+/* GSAP Animation Classes */
+.gsap-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.gsap-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.gsap-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.gsap-scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.gsap-rotate-in {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+}
+
+/* Scroll Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.scroll-reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Hover Animations */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+/* Loading Animations */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Text Animations */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--text-primary);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--text-primary);
+    }
+}
+
+/* Particle Effects */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.particle-1 {
+    width: 4px;
+    height: 4px;
+    background: var(--text-primary);
+    border-radius: 50%;
+}
+
+.particle-2 {
+    width: 6px;
+    height: 6px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+}
+
+.particle-3 {
+    width: 2px;
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+/* Stagger Animations */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Parallax Elements */
+.parallax-element {
+    will-change: transform;
+}
+
+/* Smooth Transitions */
+.smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-transition-slow {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Easing */
+.ease-out-quart {
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ease-in-out-quart {
+    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
